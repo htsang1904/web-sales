@@ -19,6 +19,9 @@ p {
     color: #465b52;
     margin: 15px 0 20px 0;
 }
+body {
+    width: 100%;
+}
 button.white {
     font-size: 22px;
     font-weight: 600;
@@ -501,39 +504,12 @@ button.white {
 .nav__ul a {
     color: #999;
 }
-
-  
+.nav__item .row img {
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
 .legal {
     display: flex;
     flex-wrap: wrap;
     color: #999;
-}
-    
-.legal__links {
-    display: flex;
-    align-items: center;
-}
-  
-.heart {
-    color: #2f2f2f;
-}
-  
-@media screen and (min-width: 24.375em) {
-    .legal .legal__links {
-      margin-left: auto;
-    }
-}
-  
-@media screen and (min-width: 40.375em) {
-    .footer__nav > * {
-      flex: 1;
-    }
-    
-    .footer__addr {
-      flex: 1 0px;
-    }
-    
-    .footer__nav {
-      flex: 2 0px;
-    }
-}
+} 
