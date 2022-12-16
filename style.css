@@ -19,6 +19,16 @@ p {
     color: #465b52;
     margin: 15px 0 20px 0;
 }
+button.white {
+    font-size: 22px;
+    font-weight: 600;
+    padding: 12px 20px;
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+    border: 1px solid #fff;
+    transition: 0.2s;
+}
 .section-p1 {
     padding: 40px 80px;
 }
@@ -74,26 +84,30 @@ p {
     left: 25px;
 }
 #banner {
-    background-image: url(./assets/images/baner.png);
+    background-image: url(./assets/images/banner.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
     height: 90vh;
-    text-align: center;
     position: relative;
 }
 #banner button {
     border: none;
     border-radius: 18px;
-    color: #E3E6F3;
+    color: #1a1a1a;
     font-size: 20px;
-    font-weight: 600;
-    background-color: #000044;
+    font-weight: 700;
+    background-color: #fff;
     position: absolute;
-    top: 520px;
-    left: 44.5%;
-    padding: 14px 40px;
+    top: 62%;
+    left: 17%;
+    padding: 1% 2.5%;
     cursor: pointer;
+    transition: 0.4s ease;
+}
+#banner button:hover {
+    background: #088178;
+    color: #fff;
 }
 #feature {
     display: flex;
@@ -162,13 +176,63 @@ p {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
     margin: 14px 0;
     transition: 0.2s ease;
+    overflow: hidden;
 }
-#product1 .pro:hover {
+#product1 .pro .hovered {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+#product1 .pro:hover::after {
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+#product1 .pro .hovered:hover::after {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    left: 0;
+}
+#product1 .pro .hovered::after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    content: "";
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    top: 0;
+    left: -100%;
+    transition: 0.5s;
 }
 #product1 .pro img {
     width: 100%;
-    border-radius: 20px ;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+#product1 .pro .hovered:hover img {
+    transform: scale(1.3);
+}
+#product1 .hovered button{
+    position: absolute;
+    width: 140px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    bottom: 40%;
+    left: 32%;
+    opacity: 0;
+    cursor: pointer;
+}
+#product1 .hovered:hover button {
+    opacity: 1;
+    transition: 0.6s;
+    z-index: 1;
+}
+#product1 .hovered button:hover  {
+    background-color: #088178;
+    border: 2px solid #088178;
 }
 #product1 .pro .des {
     text-align: start;
@@ -205,4 +269,111 @@ p {
     position: absolute;
     bottom: 8px;
     right: 15px;
+}
+#banner-sale {
+    background-image: url(./assets/images/banner-sale.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 40vh;
+    position: relative;
+}
+#banner-sale button {
+    border: none;
+    border-radius: 18px;
+    color: #1a1a1a;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #fff;
+    position: absolute;
+    top: 38%;
+    left: 67%;
+    padding: 1% 2.5%;
+    cursor: pointer;
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.3);
+}
+#banner-sale button:hover {
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.6);
+}
+#sm-banner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+#sm-banner .banner-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: url(./assets/images/sm-banner/sm-banner1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 580px;
+    width: 820px;
+    height: 50vh;
+    position: relative;
+    padding: 30px;
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.2);
+}
+#sm-banner .banner-box2 {
+    background-image: url(./assets/images/sm-banner/sm-banner2.jpg);
+}
+#sm-banner h4 {
+    color: #fff;
+    font-size: 40px;
+    font-weight: 300;
+    padding: 8px 0;
+}
+#sm-banner h2 {
+    color: #fff;
+    font-size: 50px;
+    font-weight: 800;
+    padding: 8px 0;
+}
+#sm-banner .banner-box:hover button {
+    background-color: #088178;
+    border: 1px solid #088178;
+}
+#sm-banner .banner-box:hover {
+    cursor: pointer;
+}
+#banner3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 80px;
+}
+#banner3 .banner-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-image: url(./assets/images/sm-banner/banner3-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 30%;
+    height: 30vh;
+    position: relative;
+    padding:  20px;
+    margin-bottom: 20px;
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.2);
+}
+#banner3 .banner-box2 {
+    background-image: url(./assets/images/sm-banner/banner3-2.jpg);
+}
+#banner3 .banner-box3 {
+    background-image: url(./assets/images/sm-banner/banner3-3.jpg);
+}
+#banner3 .banner-box:hover {
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+#banner3 h2 {
+    font-size: 38px;
+    color: #cbad1d;
+}
+#banner3 h4 {
+    color: #f59595;
+    font-size: 22px;
 }
