@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <title>SNEAKERS</title>
 </head>
 <body>
     <section id="header">
         <a href="#"><img src="./assets/images/logo.png" class="logo" alt=""></a>
-        
         <div>
             <ul id="navbar">
                 <li><a class="active" href="index.html">Trang chủ</a></li>
@@ -21,6 +21,10 @@
                 <li><a href="contact.html">Liên hệ</a></li>
                 <li><a href="cart.html"><i class="fas fa-shopping-basket"></i></a></li>
             </ul>
+        </div>
+        <div id="mobile">
+            <a href="cart.html"><i class="fas fa-shopping-basket"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
 
@@ -416,26 +420,26 @@
         </div>
     </section>
     <footer class="footer section-p1">
-        <div class="footer__addr">
+        <div class="footer-addr">
           <img src="./assets/images/logo.png" alt="">  
           <h2>Contact</h2>     
           <address>
             Thành phố Thủ Đức, Tp.HCM<br>
-            <a class="footer__btn" href="mailto:example@gmail.com">Email Us</a>
+            <a class="footer-btn" href="mailto:htsang1939@gmail.com">Liên hệ qua Email</a>
           </address>
         </div>
-        <ul class="footer__nav">
-          <li class="nav__item">
-            <h2 class="nav__title">About</h2>
-            <ul class="nav__ul">
+        <ul class="footer-nav">
+          <li class="nav-item">
+            <h2 class="nav-title">About</h2>
+            <ul class="nav-ul">
               <li><a href="#">About us</a></li>
               <li><a href="#">Delivery Information</a></li>   
               <li><a href="#">Privacy Policy</a></li>
             </ul>
           </li>
-          <li class="nav__item nav__item--extra">
-            <h2 class="nav__title">My Account</h2>
-            <ul class="nav__ul">
+          <li class="nav-item">
+            <h2 class="nav-title">My Account</h2>
+            <ul class="nav-ul">
               <li><a href="#">Sign In</a></li>
               <li><a href="#">Vew Cart</a></li>
               <li><a href="#">My Wishlist</a></li>
@@ -443,8 +447,8 @@
               <li><a href="#">Help</a></li>
             </ul>
           </li>
-          <li class="nav__item">
-            <h2 class="nav__title">Install App</h2> 
+          <li class="nav-item">
+            <h2 class="nav-title">Install App</h2> 
             <p>From App Store or Google Play</p>
             <div class="row">
                 <img src="./assets/images/pay/app.jpg" alt="">
@@ -458,7 +462,7 @@
         <div class="legal">
           <p>&copy; 2019 Something. All rights reserved.</p>
         </div>
-      </footer>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
