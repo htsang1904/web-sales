@@ -87,6 +87,16 @@
     #newsletter .form {
         width: 60%;
     }
+    #pro-detail {
+        flex-direction: column;
+        padding: 40px;
+    }
+    #pro-detail .single-pro-img {
+        width: 100%;
+    }
+    #pro-detail .single-pro-detail {
+        width: 100%;
+    }
 }
 @media (max-width: 477px) {
     #banner {

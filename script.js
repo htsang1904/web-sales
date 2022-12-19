@@ -11,3 +11,6 @@ if(close) {
     navbar.classList.remove('active');
   })
 }
+function detailPage(){
+  location.assign("detail.html");
+}
