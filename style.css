@@ -89,6 +89,9 @@ button.white {
 #mobile {
     display: none;
 }
+#close {
+    display: none;
+}
 #banner {
     background-image: url(./assets/images/banner.png);
     background-repeat: no-repeat;
@@ -106,7 +109,7 @@ button.white {
     background-color: #fff;
     position: absolute;
     top: 62%;
-    left: 17%;
+    left: 2%;
     padding: 1% 2.5%;
     cursor: pointer;
     transition: 0.4s ease;
@@ -323,7 +326,7 @@ button.white {
     height: 50vh;
     position: relative;
     padding: 30px;
-    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.1);
 }
 #sm-banner .banner-box2 {
     background-image: url(./assets/images/sm-banner/sm-banner2.jpg);
@@ -491,7 +494,6 @@ button.white {
     height: 40px;
     max-width: max-content;
     background-color: #088178;
-    border: 2px solid #2f2f2f;
     border-radius: 4px;
     color: #fff;
     line-height: 0;
