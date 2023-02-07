@@ -97,6 +97,10 @@
     #pro-detail .single-pro-detail {
         width: 100%;
     }
+    /* Blog page */
+    #blog {
+        padding: 100px 50px 0 50px;
+    }
 }
 @media (max-width: 477px) {
     #banner {
@@ -153,5 +157,27 @@
     .footer-nav {
         display: flex;
         flex-direction: column;
+    }
+    /* Blog page */
+    #blog .blog-box {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #blog .blog-img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    #blog .blog-details {
+        width: 100%;
+    }
+    /* About page */
+    #about-app {
+        padding: 20px;
+        font-size: 30px;
+    }
+    #about-app .video {
+        width: 100%;
     }
 }
