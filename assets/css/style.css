@@ -93,7 +93,7 @@ button.white {
     display: none;
 }
 #banner {
-    background-image: url(./assets/images/banner.png);
+    background-image: url(../images/banner.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -284,7 +284,7 @@ button.white {
     background-color: #088178;
 }
 #banner-sale {
-    background-image: url(./assets/images/banner-sale.png);
+    background-image: url(../images/banner-sale.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     width: 100%;
@@ -318,7 +318,7 @@ button.white {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    background-image: url(./assets/images/sm-banner/sm-banner1.jpg);
+    background-image: url(../images/sm-banner/sm-banner1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -329,7 +329,7 @@ button.white {
     box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.1);
 }
 #sm-banner .banner-box2 {
-    background-image: url(./assets/images/sm-banner/sm-banner2.jpg);
+    background-image: url(../images/sm-banner/sm-banner2.jpg);
 }
 #sm-banner h4 {
     color: #fff;
@@ -362,7 +362,7 @@ button.white {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    background-image: url(./assets/images/sm-banner/banner3-1.jpg);
+    background-image: url(../images/sm-banner/banner3-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -374,10 +374,10 @@ button.white {
     box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.1);
 }
 #banner3 .banner-box2 {
-    background-image: url(./assets/images/sm-banner/banner3-2.jpg);
+    background-image: url(../images/sm-banner/banner3-2.jpg);
 }
 #banner3 .banner-box3 {
-    background-image: url(./assets/images/sm-banner/banner3-3.jpg);
+    background-image: url(../images/sm-banner/banner3-3.jpg);
 }
 #banner3 .banner-box:hover {
     box-shadow: 16px 16px 30px rgba(0, 0, 0, 0.14);
@@ -406,7 +406,7 @@ button.white {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    background-image: url(./assets/images/signup.png);
+    background-image: url(../images/signup.png);
     background-position: 20% 30%;
     background-color: #041e42;
 }
