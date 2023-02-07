@@ -1,0 +1,15 @@
+#blog-banner {
+    background-image: url('../images/blog/blog-banner.jpg');
+    width: 100%;
+    height: 40vh;
+    background-size: cover;
+    background-position: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+#blog-banner h2,
+#blog-banner p {
+    color: #fff;
+}
