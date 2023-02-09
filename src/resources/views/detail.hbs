@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <title>SNEAKERS</title>
+</head>
+<body>
+    <section id="pro-detail" >
+        <div class="single-pro-img">
+          <img src="./img/sneaker/green-paisley.jpg" width="100%" id="main-img" alt="">
+          <div class="sm-img-group">
+            <div class="sm-img-col">
+              <img src="./img/sneaker/green-paisley.jpg" width="100%" class="sm-img" alt="">
+            </div>
+            <div class="sm-img-col">
+              <img src="./img/sneaker/green-paisley-1.jpg" width="100%" class="sm-img" alt="">
+            </div>
+            <div class="sm-img-col">
+              <img src="./img/sneaker/green-paisley-2.jpg" width="100%" class="sm-img" alt="">
+            </div>
+            <div class="sm-img-col">
+              <img src="./img/sneaker/green-paisley-3.jpg" width="100%" class="sm-img" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="single-pro-detail">
+          <h6>Trang chủ / Giày Nike</h6>
+          <h4>Nike Dunk Low Green Paisley - Rep 1:1</h4>
+          <h2>599,000Đ</h2>
+          <select>
+            <option value="">39</option>
+            <option value="">40</option>
+            <option value="">41</option>
+            <option value="">42</option>
+            <option value="">43</option>
+          </select>
+          <input type="number" value="1">
+          <button>Thêm vào giỏ hàng</button>
+          <h4>Thông tin chi tiết</h4>
+          <span>Khi cả thương hiệu chính và nhà xuất bản Nike SB của nó bắt đầu giới thiệu những đôi Nike Dunk Low, mẫu giày này đã thể hiện sự yêu thích với các họa tiết hoa văn, gần đây đã xuất hiện trong một số ít phối màu thể hiện họa tiết này. Đối với mục nhập mới nhất vào bộ sưu tập chắc chắn sẽ là một bộ sưu tập mở rộng, thiết kế 37 năm tuổi mang tính biểu tượng đã khoác lên mình một màu xanh đậm.</span>
+        </div>
+    </section>
+    <section id="newsletter" class="section-p1 section-m1">
+        <div class="newstext">
+            <h4>Đăng ký bằng Email</h4>
+            <p>Đăng ký để nhận được những thông báo mới nhất và <span>những ưu đãi đặc biệt.</span></p>
+        </div>
+        <div class="form">
+            <input type="email" placeholder="Nhập mail của bạn">
+            <button>Đăng ký</button>
+        </div>
+    </section>
+    <script>
+      var mainImg = document.getElementById('main-img');
+      var smallImg = document.getElementsByClassName('sm-img')
+      smallImg[0].onclick = () => mainImg.src = smallImg[0].src;
+      smallImg[1].onclick = () => mainImg.src = smallImg[1].src;
+      smallImg[2].onclick = () => mainImg.src = smallImg[2].src;
+      smallImg[3].onclick = () => mainImg.src = smallImg[3].src;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
