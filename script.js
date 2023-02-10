@@ -1,12 +1,14 @@
-const bar = document.getElementById('bar');
-const navbar = document.getElementById('navbar');
-const close = document.getElementById('close');
+let bar = document.getElementById('bar');
+let navbar = document.getElementById('navbar');
+let close = document.getElementById('close');
+
 let product = [
   {
     id: 1,
     cate: "Giày nike",
     title: "Nike Dunk Low Green Paisley - Rep 1:1",
     price: "599,000",
+    img: "./assets/images/sneaker/green-paisley.jpg",
     inCart: 0,
   },
   {
@@ -14,6 +16,7 @@ let product = [
     cate: "Giày nike",
     title: "SB Da Lộn Cà Phê  - Rep 1:1",
     price: "649,000",
+    img: "./assets/images/sneaker/sb-caphe.jpg",
     inCart: 0,
   },
   {
@@ -21,6 +24,7 @@ let product = [
     cate: "Giày nike",
     title: "SB Akira Khoai Môn - Rep 1:1",
     price: "649,000",
+    img: "./assets/images/sneaker/sb-khoaimon.jpg",
     inCart: 0,
   },
   {
@@ -28,6 +32,7 @@ let product = [
     cate: "Giày nike",
     title: "SB Akira Xanh Rêu - Rep 1:1",
     price: "649,000",
+    img: "./assets/images/sneaker/sb-xanhreu.jpg",
     inCart: 0,
   },
   {
@@ -35,6 +40,7 @@ let product = [
     cate: "Giày nike",
     title: "SB Akira Xanh Kem - Rep 1:1",
     price: "649,000",
+    img: "./assets/images/sneaker/sb-xanhkem.jpg",
     inCart: 0,
   },
   {
@@ -42,6 +48,7 @@ let product = [
     cate: "Giày nike",
     title: "SB Xanh Cam - Rep 1:1",
     price: "599,000",
+    img: "./assets/images/sneaker/sb-xanhcam.jpg",
     inCart: 0,
   },
   {
@@ -49,6 +56,7 @@ let product = [
     cate: "Giày nike",
     title: "SB Hồng - Rep 1:1",
     price: "599,000",
+    img: "./assets/images/sneaker/sb-hong.jpg",
     inCart: 0,
   },
   {
@@ -56,6 +64,7 @@ let product = [
     cate: "Giày nike",
     title: "Jordan 3 Fragment - Rep 1:1",
     price: "679,000",
+    img: "./assets/images/sneaker/jordan-3.jpg",
     inCart: 0,
   },
 ]
@@ -65,6 +74,7 @@ let newProduct = [
     cate: "Giày Gucci",
     title: "North Face Rhyton - Rep 1:1",
     price: "749,000",
+    img: "./assets/images/sneaker/gucci-northface.jpg",
     inCart: 0,
   },
   {
@@ -72,6 +82,7 @@ let newProduct = [
     cate: "Giày MLB",
     title: "Boston Monogram  - Rep 1:1",
     price: "749,000",
+    img: "./assets/images/sneaker/mlb-boston.jpg",
     inCart: 0,
   },
   {
@@ -79,6 +90,7 @@ let newProduct = [
     cate: "Giày nike",
     title: "Jordan 3 Retro Tinker - Rep 1:1",
     price: "679,000",
+    img: "./assets/images/sneaker/jordan-3-retro.jpg",
     inCart: 0,
   },
   {
@@ -86,6 +98,7 @@ let newProduct = [
     cate: "Giày nike",
     title: "Jordan Chicago Red - Rep 1:1",
     price: "749,000",
+    img: "./assets/images/sneaker/jordan-chicago-cocao.jpg",
     inCart: 0,
   },
   {
@@ -93,6 +106,7 @@ let newProduct = [
     cate: "Giày nike",
     title: "Jordan Legacy Blue - Rep 1:1",
     price: "749,000",
+    img: "./assets/images/sneaker/jordan-lagacy-cocao.jpg",
     inCart: 0,
   },
   {
@@ -100,6 +114,7 @@ let newProduct = [
     cate: "Giày nike",
     title: "Jordan Louis Vuitton - Rep 1:1",
     price: "749,000",
+    img: "./assets/images/sneaker/jordan-louis-cocao.jpg",
     inCart: 0,
   },
   {
@@ -107,6 +122,7 @@ let newProduct = [
     cate: "Giày nike",
     title: "Jordan Xám Đen - Rep 1:1",
     price: "649,000",
+    img: "./assets/images/sneaker/jordan-xamden-cocao.jpg",
     inCart: 0,
   },
   {
@@ -114,6 +130,7 @@ let newProduct = [
     cate: "Giày nike",
     title: "Jordan Xanh Ngọc - Rep 1:1",
     price: "749,000",
+    img: "./assets/images/sneaker/jordan-xanhngoc-cocao.jpg",
     inCart: 0,
   },
 ]
@@ -129,6 +146,65 @@ if(close) {
 }
 function detailPage(){
   location.assign("detail.html");
+}
+
+function generateShop() {
+  let listProContainers = document.getElementsByClassName('list-products')
+  for(var i = 0; i < listProContainers.length; i++) {
+    let listProducts = listProContainers[i]
+    listProducts.innerHTML = product.map((product)=>{
+      return `
+      <div class="pro">
+        <div class="hovered">
+          <img src="${product.img}" alt="">
+          <button>Qick View</button>
+        </div>
+        <div class="des">
+          <span>${product.cate}</span>
+          <h5>${product.title}</h5>
+          <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+          <h4>${product.price} VND</h4>
+        </div>
+        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+      </div>
+      `
+    })
+  }
+}
+function generateNewShop() {
+  let listProContainers = document.getElementsByClassName('list-new')
+  for(var i = 0; i < listProContainers.length; i++) {
+    let listProducts = listProContainers[i]
+    listProducts.innerHTML = newProduct.map((product)=>{
+      return `
+      <div class="pro">
+        <div class="hovered">
+          <img src="${product.img}" alt="">
+          <button>Qick View</button>
+        </div>
+        <div class="des">
+          <span>${product.cate}</span>
+          <h5>${product.title}</h5>
+          <div class="star">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+          </div>
+          <h4>${product.price} VND</h4>
+        </div>
+        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+      </div>
+      `
+    })
+  }
 }
 
 if(document.readyState == 'loading') {
@@ -155,6 +231,8 @@ function ready() {
     var addButton = addCart[i]
     addButton.addEventListener("click", addCartClicked)
   }
+  generateShop()
+  generateNewShop()
 }
 function moveToShop() {
   var element = document.getElementsByClassName('shop-now')[0]

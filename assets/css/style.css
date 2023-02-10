@@ -86,6 +86,20 @@ button.white {
     bottom: 14px;
     left: 25px;
 }
+#navbar #bag {
+    position: relative;
+}
+#navbar .cart-amount {
+    position: absolute;
+    background-color: red;
+    color: white;
+    height: 20px;
+    line-height: 23px;
+    padding: 0 2px;
+    border-radius: 25px;
+    top: 2px;
+    right: 16px;
+}
 #mobile {
     display: none;
 }
