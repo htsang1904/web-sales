@@ -75,12 +75,28 @@
 }
 #cart .cart-box .cart-quantity {
     padding: 10px 0;
-    margin: 20px 0;
+    margin: 20px 8px;
     border: 1px solid black;
     outline-color: red;
     width: 50px;
     text-align: center;
     font-size: 20px;
+}
+#cart .cart-box .input-number {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+#cart .cart-box .cart-btn {
+    height: 40px;
+    width: 40px;
+    line-height: 47px;
+    font-size: 40px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #088178;
+    color: white;
 }
 #cart .total {
     display: flex;

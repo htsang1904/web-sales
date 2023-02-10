@@ -1,139 +1,9 @@
 let bar = document.getElementById('bar');
 let navbar = document.getElementById('navbar');
 let close = document.getElementById('close');
-
-let product = [
-  {
-    id: 1,
-    cate: "Giày nike",
-    title: "Nike Dunk Low Green Paisley - Rep 1:1",
-    price: "599,000",
-    img: "./assets/images/sneaker/green-paisley.jpg",
-    inCart: 0,
-  },
-  {
-    id: 2,
-    cate: "Giày nike",
-    title: "SB Da Lộn Cà Phê  - Rep 1:1",
-    price: "649,000",
-    img: "./assets/images/sneaker/sb-caphe.jpg",
-    inCart: 0,
-  },
-  {
-    id: 3,
-    cate: "Giày nike",
-    title: "SB Akira Khoai Môn - Rep 1:1",
-    price: "649,000",
-    img: "./assets/images/sneaker/sb-khoaimon.jpg",
-    inCart: 0,
-  },
-  {
-    id: 4,
-    cate: "Giày nike",
-    title: "SB Akira Xanh Rêu - Rep 1:1",
-    price: "649,000",
-    img: "./assets/images/sneaker/sb-xanhreu.jpg",
-    inCart: 0,
-  },
-  {
-    id: 5,
-    cate: "Giày nike",
-    title: "SB Akira Xanh Kem - Rep 1:1",
-    price: "649,000",
-    img: "./assets/images/sneaker/sb-xanhkem.jpg",
-    inCart: 0,
-  },
-  {
-    id: 6,
-    cate: "Giày nike",
-    title: "SB Xanh Cam - Rep 1:1",
-    price: "599,000",
-    img: "./assets/images/sneaker/sb-xanhcam.jpg",
-    inCart: 0,
-  },
-  {
-    id: 7,
-    cate: "Giày nike",
-    title: "SB Hồng - Rep 1:1",
-    price: "599,000",
-    img: "./assets/images/sneaker/sb-hong.jpg",
-    inCart: 0,
-  },
-  {
-    id: 8,
-    cate: "Giày nike",
-    title: "Jordan 3 Fragment - Rep 1:1",
-    price: "679,000",
-    img: "./assets/images/sneaker/jordan-3.jpg",
-    inCart: 0,
-  },
-]
-let newProduct = [
-  {
-    id: 1,
-    cate: "Giày Gucci",
-    title: "North Face Rhyton - Rep 1:1",
-    price: "749,000",
-    img: "./assets/images/sneaker/gucci-northface.jpg",
-    inCart: 0,
-  },
-  {
-    id: 2,
-    cate: "Giày MLB",
-    title: "Boston Monogram  - Rep 1:1",
-    price: "749,000",
-    img: "./assets/images/sneaker/mlb-boston.jpg",
-    inCart: 0,
-  },
-  {
-    id: 3,
-    cate: "Giày nike",
-    title: "Jordan 3 Retro Tinker - Rep 1:1",
-    price: "679,000",
-    img: "./assets/images/sneaker/jordan-3-retro.jpg",
-    inCart: 0,
-  },
-  {
-    id: 4,
-    cate: "Giày nike",
-    title: "Jordan Chicago Red - Rep 1:1",
-    price: "749,000",
-    img: "./assets/images/sneaker/jordan-chicago-cocao.jpg",
-    inCart: 0,
-  },
-  {
-    id: 5,
-    cate: "Giày nike",
-    title: "Jordan Legacy Blue - Rep 1:1",
-    price: "749,000",
-    img: "./assets/images/sneaker/jordan-lagacy-cocao.jpg",
-    inCart: 0,
-  },
-  {
-    id: 6,
-    cate: "Giày nike",
-    title: "Jordan Louis Vuitton - Rep 1:1",
-    price: "749,000",
-    img: "./assets/images/sneaker/jordan-louis-cocao.jpg",
-    inCart: 0,
-  },
-  {
-    id: 7,
-    cate: "Giày nike",
-    title: "Jordan Xám Đen - Rep 1:1",
-    price: "649,000",
-    img: "./assets/images/sneaker/jordan-xamden-cocao.jpg",
-    inCart: 0,
-  },
-  {
-    id: 8,
-    cate: "Giày nike",
-    title: "Jordan Xanh Ngọc - Rep 1:1",
-    price: "749,000",
-    img: "./assets/images/sneaker/jordan-xanhngoc-cocao.jpg",
-    inCart: 0,
-  },
-]
+let cart = document.getElementsByClassName('cart-container')[0]
+let basket = JSON.parse(localStorage.getItem("data")) || []
+let totalItems = document.getElementById('total-price')
 if(bar) {
   bar.addEventListener('click', () => {
     navbar.classList.add('active');
@@ -157,7 +27,7 @@ function generateShop() {
       <div class="pro">
         <div class="hovered">
           <img src="${product.img}" alt="">
-          <button>Qick View</button>
+          <button onclick="detailPage()">Qick View</button>
         </div>
         <div class="des">
           <span>${product.cate}</span>
@@ -171,7 +41,7 @@ function generateShop() {
           </div>
           <h4>${product.price} VND</h4>
         </div>
-        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+        <i onclick="addToCart(${product.id})" class="fas fa-shopping-cart cart"></i>
       </div>
       `
     })
@@ -186,7 +56,7 @@ function generateNewShop() {
       <div class="pro">
         <div class="hovered">
           <img src="${product.img}" alt="">
-          <button>Qick View</button>
+          <button onclick="detailPage()">Qick View</button>
         </div>
         <div class="des">
           <span>${product.cate}</span>
@@ -200,40 +70,13 @@ function generateNewShop() {
           </div>
           <h4>${product.price} VND</h4>
         </div>
-        <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+        <i onclick="addToCart(${product.id})" class="fas fa-shopping-cart cart"></i>
       </div>
       `
     })
   }
 }
 
-if(document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready);
-}else {
-  ready();
-}
-
-function ready() {
-  var removeBtns = document.getElementsByClassName('trash')
-  for(var i = 0; i < removeBtns.length; i++) {
-    var button = removeBtns[i]
-    button.addEventListener('click', removeCartItem)
-  }
-
-  var quantityInputs = document.getElementsByClassName('cart-quantity')
-  for(var i = 0; i < quantityInputs.length; i++) {
-    var input = quantityInputs[i]
-    input.addEventListener('change', quantityChanged)
-  }
-
-  var addCart = document.getElementsByClassName('cart')
-  for(var i = 0; i < addCart.length; i++) {
-    var addButton = addCart[i]
-    addButton.addEventListener("click", addCartClicked)
-  }
-  generateShop()
-  generateNewShop()
-}
 function moveToShop() {
   var element = document.getElementsByClassName('shop-now')[0]
   var headerOffset = 80
@@ -244,70 +87,105 @@ function moveToShop() {
     behavior: "smooth"
   }); 
 }
-function removeCartItem(e) {
-  var buttonClicked = e.target
-  buttonClicked.parentElement.remove()
-  updateTotal()
-}
 
-function quantityChanged(e) {
-  var input = e.target
-  if(isNaN(input.value) || input.value <= 0) {
-    input.value = 1
+function addToCart(id) {
+  var search = basket.find((x)=> x.id === id)
+  if(search === undefined) {
+    basket.push({
+      id: id,
+      item: 1,
+    })
+  }else {
+    search.item += 1
   }
-  updateTotal()
+  calculation()
+  updateItems(id)
+  localStorage.setItem("data", JSON.stringify(basket))
 }
 
-function addCartClicked(e) {
-  var addButton = e.target
-  var shopProducts = addButton.parentElement
-  var cate = shopProducts.getElementsByClassName('pro-category')[0].innerText
-  var title = shopProducts.getElementsByClassName('pro-title')[0].innerText
-  var proImg = shopProducts.getElementsByTagName('img')[0].src
-  // addProductToCart(cate, title, proImg)
-  // updateTotal()
-}
-
-// function addProductToCart(cate, title, proImg) {
-//   var addShopBox = document.createElement('div')
-//   addShopBox.classList.add('cart-box')
-//   var cartItems = document.getElementsByClassName('cart-container')[0]
-//   var cartItemsCate = cartItems.getElementsByClassName('cart-pro-category')
-//   for(var i = 0; i < cartItemsCate.length; i++) {
-//     console.log(cartItems)
-//     if( cartItemsCate.innerText == cate) {
-//       return
-//     }
-//   }
-//   var cartBoxContent = `
-//   <div>
-//   <img src="./assets/images/sneaker/green-paisley.jpg" alt="">
-//   </div>
-//   <div class="des">
-//       <span class="cart-pro-category">Giày nike</span>
-//       <h5 class="cart-pro-title">Nike Dunk Low Green Paisley - Rep 1:1</h5>
-//       <input type="number" value="1" class="cart-quantity">
-//       <h4 class="cart-price">599,000 VND</h4>
-//   </div>
-//   <i class="fas fa-trash trash"></i>
-//   `
-//   addShopBox.innerHTML = cartBoxContent
-//   cartItems.append(addShopBox)
-//   addShopBox.getElementsByClassName('trash')[0].addEventListener('click', removeCartItem)
-//   addShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged)
-// }
-
-function updateTotal() {
-  var cartContainer = document.getElementsByClassName('cart-container')[0]
-  var cartBoxes = cartContainer.getElementsByClassName('cart-box')
-  var total = 0
-  for(var i = 0; i < cartBoxes.length; i++) {
-    var cartBox = cartBoxes[i]
-    var priceElement = cartBox.getElementsByClassName('cart-price')[0]
-    var quantityElement = cartBox.getElementsByClassName('cart-quantity')[0]
-    var price = parseFloat(priceElement.innerText.replace("VND","")) * 1000
-    var quantity = quantityElement.value
-    total = total + price * quantity
-    document.getElementsByClassName('total-price')[0].innerText = total.toLocaleString('it-IT', {style : 'currency', currency : 'VND'})
+function decrement(id) {
+  var search = basket.find((x)=> x.id === id)
+  if(search.id === 0) return
+  else {
+    search.item -= 1
   }
+  updateItems(id)
+  basket = basket.filter((x) => x.item !== 0)
+  generateCart()
+  calculation()
+  localStorage.setItem("data", JSON.stringify(basket))
+}
+
+function updateItems(id) {
+ var search = basket.find((x) => x.id === id)
+ document.getElementById(id).value = search.item
+ calculation()
+ total()
+}
+function calculation() {
+  var cartIcon = document.getElementById('cart-amount')
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y) => x+y,0)
+  localStorage.setItem("data", JSON.stringify(basket))
+}
+
+// cart
+function generateCart() {
+  if(basket.length !== 0) {
+    return cart.innerHTML = basket.map((x) => {
+      var search = product.find((y) => y.id === x.id ) || []
+      return `
+      <div id="cart-id-${search.id}" class="cart-box">
+      <div>
+      <img src="${search.img}" alt="">
+      </div>
+      <div class="des">
+          <span class="cart-pro-category">${search.cate}</span>
+          <h5 class="cart-pro-title">${search.title}</h5>
+          <div class="input-number">
+          <button onclick="decrement(${x.id})" class="cart-btn">-</button>
+          <input id="${search.id}" type="number" value="${x.item}" class="cart-quantity">
+          <button onclick="addToCart(${x.id})" class="cart-btn">+</button>
+          </div>
+          <h4 class="cart-price">${search.price} VND</h4>
+      </div>
+      <i onclick="removeItem(${search.id})" class="fas fa-trash trash"></i>
+  </div>
+      `
+    })
+  }else {
+    cart.innerHTML = ``
+  }
+}
+
+function removeItem(id) {
+  basket = basket.filter((x => x.id !== id))
+  generateCart()
+  calculation()
+  total()
+  localStorage.setItem("data", JSON.stringify(basket))
+}
+
+function total() {
+  if(basket.length !== 0) {
+    let amount = basket.map((x) => {
+      let search = product.find((y) => y.id === x.id ) || []
+      let priceInt = parseFloat(search.price)
+      return priceInt * x.item
+    }).reduce((x,y) => x+y,0)
+    totalItems.innerText = `${(amount*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}`
+  }else return
+}
+
+if(document.readyState == 'loading') {
+  document.addEventListener('DOMContentLoaded', ready);
+}else {
+  ready();
+}
+
+function ready() {
+  generateShop()
+  generateNewShop()
+  calculation()
+  total()
+  generateCart()
 }
