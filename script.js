@@ -1,6 +1,122 @@
 const bar = document.getElementById('bar');
 const navbar = document.getElementById('navbar');
 const close = document.getElementById('close');
+let product = [
+  {
+    id: 1,
+    cate: "Giày nike",
+    title: "Nike Dunk Low Green Paisley - Rep 1:1",
+    price: "599,000",
+    inCart: 0,
+  },
+  {
+    id: 2,
+    cate: "Giày nike",
+    title: "SB Da Lộn Cà Phê  - Rep 1:1",
+    price: "649,000",
+    inCart: 0,
+  },
+  {
+    id: 3,
+    cate: "Giày nike",
+    title: "SB Akira Khoai Môn - Rep 1:1",
+    price: "649,000",
+    inCart: 0,
+  },
+  {
+    id: 4,
+    cate: "Giày nike",
+    title: "SB Akira Xanh Rêu - Rep 1:1",
+    price: "649,000",
+    inCart: 0,
+  },
+  {
+    id: 5,
+    cate: "Giày nike",
+    title: "SB Akira Xanh Kem - Rep 1:1",
+    price: "649,000",
+    inCart: 0,
+  },
+  {
+    id: 6,
+    cate: "Giày nike",
+    title: "SB Xanh Cam - Rep 1:1",
+    price: "599,000",
+    inCart: 0,
+  },
+  {
+    id: 7,
+    cate: "Giày nike",
+    title: "SB Hồng - Rep 1:1",
+    price: "599,000",
+    inCart: 0,
+  },
+  {
+    id: 8,
+    cate: "Giày nike",
+    title: "Jordan 3 Fragment - Rep 1:1",
+    price: "679,000",
+    inCart: 0,
+  },
+]
+let newProduct = [
+  {
+    id: 1,
+    cate: "Giày Gucci",
+    title: "North Face Rhyton - Rep 1:1",
+    price: "749,000",
+    inCart: 0,
+  },
+  {
+    id: 2,
+    cate: "Giày MLB",
+    title: "Boston Monogram  - Rep 1:1",
+    price: "749,000",
+    inCart: 0,
+  },
+  {
+    id: 3,
+    cate: "Giày nike",
+    title: "Jordan 3 Retro Tinker - Rep 1:1",
+    price: "679,000",
+    inCart: 0,
+  },
+  {
+    id: 4,
+    cate: "Giày nike",
+    title: "Jordan Chicago Red - Rep 1:1",
+    price: "749,000",
+    inCart: 0,
+  },
+  {
+    id: 5,
+    cate: "Giày nike",
+    title: "Jordan Legacy Blue - Rep 1:1",
+    price: "749,000",
+    inCart: 0,
+  },
+  {
+    id: 6,
+    cate: "Giày nike",
+    title: "Jordan Louis Vuitton - Rep 1:1",
+    price: "749,000",
+    inCart: 0,
+  },
+  {
+    id: 7,
+    cate: "Giày nike",
+    title: "Jordan Xám Đen - Rep 1:1",
+    price: "649,000",
+    inCart: 0,
+  },
+  {
+    id: 8,
+    cate: "Giày nike",
+    title: "Jordan Xanh Ngọc - Rep 1:1",
+    price: "749,000",
+    inCart: 0,
+  },
+]
 if(bar) {
   bar.addEventListener('click', () => {
     navbar.classList.add('active');
