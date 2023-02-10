@@ -101,6 +101,13 @@
     #blog {
         padding: 100px 50px 0 50px;
     }
+    #cart {
+        padding: 20px 10px;
+    }
+    #cart .cart-box .trash {
+        bottom: 12px;
+        right: 16px;
+    }
 }
 @media (max-width: 477px) {
     #banner {
@@ -179,5 +186,36 @@
     }
     #about-app .video {
         width: 100%;
+    }
+    #cart {
+        padding: 20px 10px;
+    }
+    #cart .cart-box img {
+        width: 120px;
+        height: 120px;
+        margin-left: 0;
+    }
+    #cart .cart-box .des span {
+        font-size: 18px;
+    } 
+    #cart .cart-box .des h5 {
+        font-size: 14px;
+    }
+    #cart .cart-box .trash {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        bottom: 6px;
+        right: 5px;
+    }
+    #cart .cart-box .cart-quantity {
+        width: 50px;
+        font-size: 16px;
+        padding: 5px 0;
+        margin: 10px 0;
+    }
+    #cart .cart-box .des h4 {
+            font-size: 18px;
     }
 }

@@ -40,7 +40,16 @@ function ready() {
     addButton.addEventListener("click", addCartClicked)
   }
 }
-
+function moveToShop() {
+  var element = document.getElementsByClassName('shop-now')[0]
+  var headerOffset = 80
+  var elementPosition = element.getBoundingClientRect().top
+  var offsetPosition = elementPosition + window.pageYOffset - headerOffset
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  }); 
+}
 function removeCartItem(e) {
   var buttonClicked = e.target
   buttonClicked.parentElement.remove()
@@ -59,8 +68,40 @@ function addCartClicked(e) {
   var addButton = e.target
   var shopProducts = addButton.parentElement
   var cate = shopProducts.getElementsByClassName('pro-category')[0].innerText
-  console.log(cate)
+  var title = shopProducts.getElementsByClassName('pro-title')[0].innerText
+  var proImg = shopProducts.getElementsByTagName('img')[0].src
+  // addProductToCart(cate, title, proImg)
+  // updateTotal()
 }
+
+// function addProductToCart(cate, title, proImg) {
+//   var addShopBox = document.createElement('div')
+//   addShopBox.classList.add('cart-box')
+//   var cartItems = document.getElementsByClassName('cart-container')[0]
+//   var cartItemsCate = cartItems.getElementsByClassName('cart-pro-category')
+//   for(var i = 0; i < cartItemsCate.length; i++) {
+//     console.log(cartItems)
+//     if( cartItemsCate.innerText == cate) {
+//       return
+//     }
+//   }
+//   var cartBoxContent = `
+//   <div>
+//   <img src="./assets/images/sneaker/green-paisley.jpg" alt="">
+//   </div>
+//   <div class="des">
+//       <span class="cart-pro-category">Giày nike</span>
+//       <h5 class="cart-pro-title">Nike Dunk Low Green Paisley - Rep 1:1</h5>
+//       <input type="number" value="1" class="cart-quantity">
+//       <h4 class="cart-price">599,000 VND</h4>
+//   </div>
+//   <i class="fas fa-trash trash"></i>
+//   `
+//   addShopBox.innerHTML = cartBoxContent
+//   cartItems.append(addShopBox)
+//   addShopBox.getElementsByClassName('trash')[0].addEventListener('click', removeCartItem)
+//   addShopBox.getElementsByClassName('cart-quantity')[0].addEventListener('change', quantityChanged)
+// }
 
 function updateTotal() {
   var cartContainer = document.getElementsByClassName('cart-container')[0]
