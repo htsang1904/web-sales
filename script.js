@@ -132,7 +132,7 @@ function calculation() {
 function generateCart() {
   if(basket.length !== 0) {
     return cart.innerHTML = basket.map((x) => {
-      var search = product.find((y) => y.id === x.id ) || []
+      var search = product.find((y) => y.id === x.id ) || newProduct.find((y) => y.id === x.id ) || []
       return `
       <div id="cart-id-${search.id}" class="cart-box">
       <div>
@@ -157,6 +157,8 @@ function generateCart() {
   }
 }
 
+
+
 function removeItem(id) {
   basket = basket.filter((x => x.id !== id))
   generateCart()
@@ -166,14 +168,15 @@ function removeItem(id) {
 }
 
 function total() {
+  
   if(basket.length !== 0) {
     let amount = basket.map((x) => {
-      let search = product.find((y) => y.id === x.id ) || []
+      var search = product.find((y) => y.id === x.id ) || newProduct.find((y) => y.id === x.id ) || []
       let priceInt = parseFloat(search.price)
       return priceInt * x.item
     }).reduce((x,y) => x+y,0)
     totalItems.innerText = `${(amount*1000).toLocaleString('it-IT', {style : 'currency', currency : 'VND'})}`
-  }else return
+  }else return totalItems.innerText = 0
 }
 
 if(document.readyState == 'loading') {
