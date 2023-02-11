@@ -20,7 +20,8 @@
   "homepage": "https://github.com/htsang1904/web-sales#readme",
   "dependencies": {
     "express": "^4.18.2",
-    "express-handlebars": "^6.0.7"
+    "express-handlebars": "^6.0.7",
+    "mongoose": "^6.9.1"
   },
   "devDependencies": {
     "morgan": "^1.10.0",

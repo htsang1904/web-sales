@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="/css/detail.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <title>SNEAKERS</title>
+</head>
+<body>
+    <section id="pro-detail" >
+        <div class="single-pro-img">
+          <img src={{product.img}} width="100%" id="main-img" alt="">
+          <div class="sm-img-group">
+            <div class="sm-img-col">
+              <img src={{product.img}}  width="100%" class="sm-img" alt="">
+            </div>
+            <div class="sm-img-col">
+              <img src="/img/sneaker/green-paisley-1.jpg" width="100%" class="sm-img" alt="">
+            </div>
+            <div class="sm-img-col">
+              <img src="/img/sneaker/green-paisley-2.jpg" width="100%" class="sm-img" alt="">
+            </div>
+            <div class="sm-img-col">
+              <img src="/img/sneaker/green-paisley-3.jpg" width="100%" class="sm-img" alt="">
+            </div>
+          </div>
+        </div>
+        <div class="single-pro-detail">
+          <h6>{{product.cate}}</h6>
+          <h4>{{product.title}}</h4>
+          <h2>{{product.price}}</h2>
+          <select>
+            <option value="">39</option>
+            <option value="">40</option>
+            <option value="">41</option>
+            <option value="">42</option>
+            <option value="">43</option>
+          </select>
+          <input type="number" value="1">
+          <button>Thêm vào giỏ hàng</button>
+          <h4>Thông tin chi tiết</h4>
+          <span>{{product.description}}</span>
+        </div>
+    </section>
+    <script>
+      var mainImg = document.getElementById('main-img');
+      var smallImg = document.getElementsByClassName('sm-img')
+      smallImg[0].onclick = () => mainImg.src = smallImg[0].src;
+      smallImg[1].onclick = () => mainImg.src = smallImg[1].src;
+      smallImg[2].onclick = () => mainImg.src = smallImg[2].src;
+      smallImg[3].onclick = () => mainImg.src = smallImg[3].src;
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
