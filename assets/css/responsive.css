@@ -218,4 +218,11 @@
     #cart .cart-box .des h4 {
             font-size: 18px;
     }
+    #cart .cart-box .cart-btn {
+        height: 30px;
+        width: 30px;
+        line-height: 38px;
+        font-size: 30px;
+        margin: 10px;
+    }
 }

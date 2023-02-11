@@ -86,7 +86,7 @@ button.white {
     bottom: 14px;
     left: 25px;
 }
-#navbar #bag {
+#navbar .bag {
     position: relative;
 }
 #navbar .cart-amount {
@@ -99,6 +99,21 @@ button.white {
     border-radius: 25px;
     top: 2px;
     right: 16px;
+}
+#mobile .bag-mobile {
+    position: relative;
+}
+#mobile .cart-amount {
+    position: absolute;
+    background-color: red;
+    color: white;
+    height: 20px;
+    line-height: 23px;
+    padding: 0 2px;
+    border-radius: 25px;
+    top: 6px;
+    right: 57px;
+    z-index: -1;
 }
 #mobile {
     display: none;

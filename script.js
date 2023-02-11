@@ -99,6 +99,7 @@ function addToCart(id) {
     search.item += 1
   }
   calculation()
+  calculationMobile()
   updateItems(id)
   localStorage.setItem("data", JSON.stringify(basket))
 }
@@ -113,6 +114,7 @@ function decrement(id) {
   basket = basket.filter((x) => x.item !== 0)
   generateCart()
   calculation()
+  calculationMobile()
   localStorage.setItem("data", JSON.stringify(basket))
 }
 
@@ -120,10 +122,16 @@ function updateItems(id) {
  var search = basket.find((x) => x.id === id)
  document.getElementById(id).value = search.item
  calculation()
+ calculationMobile()
  total()
 }
 function calculation() {
   var cartIcon = document.getElementById('cart-amount')
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y) => x+y,0)
+  localStorage.setItem("data", JSON.stringify(basket))
+}
+function calculationMobile() {
+  var cartIcon = document.getElementById('cart-amount-mobile')
   cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y) => x+y,0)
   localStorage.setItem("data", JSON.stringify(basket))
 }
@@ -163,6 +171,7 @@ function removeItem(id) {
   basket = basket.filter((x => x.id !== id))
   generateCart()
   calculation()
+  calculationMobile()
   total()
   localStorage.setItem("data", JSON.stringify(basket))
 }
@@ -189,6 +198,7 @@ function ready() {
   generateShop()
   generateNewShop()
   calculation()
+  calculationMobile()
   total()
   generateCart()
 }
