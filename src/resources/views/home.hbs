@@ -13,7 +13,7 @@
 
 <body>
     <section id="banner">
-        <button>Shop now</button>
+        <a href="/shop"><button>Shop now</button></a>
     </section>
 
     <section id="feature" class="section-p1">
@@ -47,14 +47,15 @@
         <h2>Sản Phẩm Nổi Bật</h2>
         <p>Những mẫu được ưa chuộn nhất</p>
         <div class="pro-container">
+            {{#each products}}
             <div class="pro">
                 <div class="hovered">
-                    <img src="./img/sneaker/green-paisley.jpg" alt="">
-                    <button>Quick View</button>
+                <img src="{{this.img}}" alt="">
+                <a href="/shop/{{this.slug}}"><button >Quick View</button></a>
                 </div>
                 <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Nike Dunk Low Green Paisley - Rep 1:1</h5>
+                    <span>{{this.cate}}</span>
+                    <h5>{{this.title}}</h5>
                     <div class="star">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -62,310 +63,15 @@
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <h4>599,000 VND</h4>
+                    <h4>{{this.price}} VND</h4>
                 </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+                <i onclick="addToCart({{this.id}})" class="fas fa-shopping-cart cart"></i>             
             </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/sb-caphe.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>SB Da Lộn Cà Phê - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>649,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/sb-khoaimon.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>SB Akira Khoai Môn - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>649,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/sb-xanhreu.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>SB Akira Xanh Rêu - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>649,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/sb-xanhkem.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>SB Akira Xanh Kem - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>649,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/sb-xanhcam.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>SB Xanh Cam - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>599,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/sb-hong.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>SB Hồng - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>599,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-3.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan 3 Fragment - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>679,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
+            {{/each}}
         </div>
     </section>
 
-    <section id="banner-sale" class="section-m1">
-        <button>Explore more</button>
-    </section>
-
-    <section id="product1" class="section-p1">
-        <h2>Sản Phẩm Mới</h2>
-        <p>Những mẫu xu hướng trong năm tới</p>
-        <div class="pro-container">
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/gucci-northface.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày Gucci</span>
-                    <h5>North Face Rhyton - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>749,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/mlb-boston.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày MLB</span>
-                    <h5>Boston Monogram - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>749,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-3-retro.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan 3 Retro Tinker - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>679,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-chicago-cocao.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan Chicago Red - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>749,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-lagacy-cocao.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan Legacy Blue - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>749,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-louis-cocao.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan Louis Vuitton - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>749,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-xamden-cocao.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan Xám Đen - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>649,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <div class="hovered">
-                    <img src="./img/sneaker/jordan-xanhngoc-cocao.jpg" alt="">
-                    <button>Quick View</button>
-                </div>
-                <div class="des">
-                    <span>Giày nike</span>
-                    <h5>Jordan Xanh Ngọc - Rep 1:1</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <h4>749,000 VND</h4>
-                </div>
-                <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
-            </div>
-        </div>
-    </section>
-
-    <section id="sm-banner" class="section-p1">
+    <a href="/shop" style="text-decoration: none;"><section id="sm-banner" class="section-p1">
         <div class="banner-box">
             <h4>Crazy sale</h4>
             <h2>buy One get One</h2>
@@ -391,8 +97,12 @@
             <h2>Seasonal Sale</h2>
             <h4>Zeezy Collection -50% OFF</h4>
         </div>
-    </section>
-    <script src="script.js"></script>
+    </section></a>
+    <script>
+        function detailPage(){
+        location.assign("/product-detail");
+    }
+    </script>
 </body>
 
 </html>

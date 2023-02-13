@@ -25,9 +25,35 @@ class SiteController {
         res.render('contact');
     }
 
-      //[GET] /
-    index (req, res) {
-        res.render('home');
+    //[GET] /cart
+    cart(req, res) {
+        res.render('cart');
+    }
+
+    //[GET] /product-detail
+    product(req, res) {
+        res.render('product-detail');
+    }
+    
+    //[GET] /home
+    home(req, res, next) {
+        Product.find({})
+            .then(products => {
+                res.render('home', { 
+                    products: multipleMongooseToObject(products) 
+                });
+            })
+            .catch(next);
+    }
+    //[GET] /
+    index(req, res, next) {
+        Product.find({})
+            .then(products => {
+                res.render('home', { 
+                    products: multipleMongooseToObject(products) 
+                });
+            })
+            .catch(next);
     }
 }
 
